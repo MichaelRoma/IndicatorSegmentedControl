@@ -19,7 +19,7 @@ Or manually add it to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/MichaelRoma/IndicatorSegmentedControl.git", from: "1.0.1")
+    .package(url: "https://github.com/MichaelRoma/IndicatorSegmentedControl.git", from: "1.0.2")
 ]
 ```
 
