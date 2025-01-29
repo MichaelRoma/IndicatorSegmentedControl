@@ -13,7 +13,7 @@ You can install this package via **Swift Package Manager**:
    ```
    https://github.com/MichaelRoma/IndicatorSegmentedControl.git
    ```
-3. Select version `1.0.1` and install.
+3. Select version `1.0.2` and install.
 
 Or manually add it to your `Package.swift`:
 
