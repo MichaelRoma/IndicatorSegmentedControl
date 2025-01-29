@@ -2,23 +2,26 @@
 
 `IndicatorSegmentedControl` is a custom UI component for iOS that provides a tab control with an animated indicator.
 
-![Demo](https://github.com/MichaelRoma/IndicatorSegmentedControl/blob/main/demo.gif)
+![Demo](https://raw.githubusercontent.com/MichaelRoma/IndicatorSegmentedControl/main/demo.gif)
 
 ## 📦 Installation
 
 You can install this package via **Swift Package Manager**:
 
 1. Open **Xcode > File > Add Packages...**
-2. Enter the repository URL: https://github.com/MichaelRoma/IndicatorSegmentedControl.git
+2. Enter the repository URL:  
+   ```
+   https://github.com/MichaelRoma/IndicatorSegmentedControl.git
+   ```
 3. Select version `1.0.1` and install.
 
 Or manually add it to your `Package.swift`:
 
 ```swift
 dependencies: [
- .package(url: "https://github.com/MichaelRoma/IndicatorSegmentedControl.git", from: "1.0.1")
+    .package(url: "https://github.com/MichaelRoma/IndicatorSegmentedControl.git", from: "1.0.1")
 ]
-
+```
 
 ## 🚀 Usage
 
@@ -32,11 +35,9 @@ let segmentedControl = IndicatorSegmentedControl(tabs: tabs)
 segmentedControl.valueChangeAction = { selectedIndex in
     print("Selected tab: \(selectedIndex)")
 }
-
-```swift
+```
 
 ### 2️⃣ **Adding to UI**
-
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
@@ -52,3 +53,4 @@ override func viewDidLoad() {
         segmentedControl.heightAnchor.constraint(equalToConstant: 44)
     ])
 }
+```
