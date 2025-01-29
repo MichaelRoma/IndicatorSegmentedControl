@@ -3,7 +3,7 @@
 
 import UIKit
 
-final class IndicatorSegmentedControl: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
+public final class IndicatorSegmentedControl: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     private var selectedTabIndex = 0
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
@@ -26,10 +26,10 @@ final class IndicatorSegmentedControl: UIView, UICollectionViewDelegate, UIColle
     }()
     
     //MARK: Public Property
-    let tabs: [String]
-    var valueChangeAction: ((_ selectedTabIndex: Int) -> Void)?
+   public let tabs: [String]
+   public var valueChangeAction: ((_ selectedTabIndex: Int) -> Void)?
     
-    init(tabs: [String], selectedTabIndex: Int = 0, valueChangeAction: ( (_: Int) -> Void)? = nil) {
+   public init(tabs: [String], selectedTabIndex: Int = 0, valueChangeAction: ( (_: Int) -> Void)? = nil) {
         self.tabs = tabs
         self.selectedTabIndex = selectedTabIndex
         self.valueChangeAction = valueChangeAction
@@ -69,7 +69,7 @@ final class IndicatorSegmentedControl: UIView, UICollectionViewDelegate, UIColle
         return layout
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         NSLayoutConstraint.activate([
             bottomSeparatorView.heightAnchor.constraint(equalToConstant: 2),
@@ -84,11 +84,11 @@ final class IndicatorSegmentedControl: UIView, UICollectionViewDelegate, UIColle
     }
     
     // MARK: - CollectionView DataSource
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tabs.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TabCell.identifier, for: indexPath) as! TabCell
         cell.label.text = tabs[indexPath.item]
         cell.label.textColor = (indexPath.item == selectedTabIndex) ? .red : .black
@@ -96,7 +96,7 @@ final class IndicatorSegmentedControl: UIView, UICollectionViewDelegate, UIColle
     }
     
     // MARK: - CollectionView Delegate
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let previousIndex = selectedTabIndex
         selectedTabIndex = indexPath.item
         
