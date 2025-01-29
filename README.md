@@ -54,3 +54,12 @@ override func viewDidLoad() {
     ])
 }
 ```
+## 🛠 Requirements
+- iOS 13.0+
+- Swift 5.7+
+- Xcode 14+
+
+---
+
+## 📄 License
+This project is released under the [MIT](LICENSE) license.
